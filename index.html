@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet show</title>
+</head>
+
+<body>
+  <h1>PetShop</h1>
+  <h2>Banho e Tosa</h2>
+
+  <form action="" method="post">
+    <hr>
+    <div class="tutor">
+      <div>
+        <label>
+          Nome tutor:
+          <input type="text" name="nomeDono" id="nomeDono">
+        </label>
+      </div>
+      <div>
+        <label>
+          Telefone tutor:
+          <input type="tel" id="telefone" name="telefone" pattern="([0-9]{2})[0-9]{4,5}-[0-9]{4}">
+          <label>
+            whatsapp:
+            <input type="checkbox" value="whatsapp" name="whatsapp" id="contato">
+          </label>
+        </label>
+      </div>
+      <div>
+        <label>
+          Endereço:
+          <input type="text" name="endereco" id="endereco" maxlength="100">
+        </label>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="pet">
+      <div>
+        <label>Nome pet:
+          <input type="text" name="nomePet" id="petName" />
+        </label>
+      </div>
+      <div>
+        <label>Idade:
+          <input type="number">
+        </label>
+        <br>
+        <label>
+          Mês(es)
+          <input type="radio" name="idade" value="mes" id="mesOption">
+        </label>
+        <label>
+          Ano(s)
+          <input type="radio" id="anoOption" name="idade" value="ano">
+        </label>
+      </div>
+      <div>
+        <label>
+          Espécie:
+          <label for="canina">Canina</label>
+          <input type="radio" name="especie" id="dog" value="canina">
+          <label for="felina">Felina</label>
+          <input type="radio" name="especie" id="cat" value="felina">
+        </label>
+      </div>
+      <div>
+        <label>
+          Sexo:
+          <label for="femea">Femea</label>
+          <input type="radio" name="especie" id="femea" value="femea">
+          <label for="macho">Macho</label>
+          <input type="radio" name="especie" id="macho" value="macho">
+        </label>
+      </div>
+    </div>
+
+    <hr>
+    <div class="chegada">
+      <div>
+        <label>Itens deixados com o pet:
+          <label>
+            Coleira
+            <input type="checkbox" name="itensPet" id="coleira">
+          </label>
+          <label>
+            Guia
+            <input type="checkbox" name="itensPet" id="guia">
+          </label>
+          <label>
+            Enforcador
+            <input type="checkbox" name="itensPet" id="enforcador">
+          </label>
+          <label>
+            Retrátil
+            <input type="checkbox" name="itensPet" id="retratil">
+          </label>
+          <label>
+            Peitoral
+            <input type="checkbox" name="itensPet" id="peitoral">
+          </label>
+          <label>
+            Escova de dentes
+            <input type="checkbox" name="itensPet" id="escovaDental">
+          </label>
+          <label>
+            Pasta de dentes
+            <input type="checkbox" name="itensPet" id="pastaDental">
+          </label>
+
+        </label>
+      </div>
+      <div>
+        <label>Observações ponderadas</label>
+        <br>
+        <label>
+          Castrado(a)
+          <input type="checkbox" name="obsPonderada" id="castrado">
+        </label>
+        <label>
+          Alérgico
+          <input type="checkbox" name="obsPonderada" id="alergico">
+        </label>
+        <label>
+          Hora marcada
+          <input type="checkbox" name="obsPonderada" id="horaMarcada">
+        </label>
+        <label>
+          Encaixe
+          <input type="checkbox" name="obsPonderada" id="encaixe">
+        </label>
+        <label>
+          Pacote
+          <input type="checkbox" name="obsPonderada" id="pacote">
+        </label>
+        <label>
+          Taxi-dog
+          <input type="checkbox" name="obsPonderada" id="taxiDog">
+        </label>
+      </div>
+      <div>
+        <label>Observações</label>
+        <textarea name="obs" id="obs" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+    <hr>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar">
+  </form>
+</body>
+
+</html>
