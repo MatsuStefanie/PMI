@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário PetShop</title>
+    <title>Pet Show</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -154,7 +154,7 @@
         <h2>Banho e Tosa</h2>
       </div>
     </div>
-    <form action="https://www.google.com.br/" method="post" target="_blank">
+    <form action="https://www.google.com.br/" method="get" target="_blank">
       <div class="tutor">
         <div>
           <label for="nomeDono">Nome tutor:</label>
@@ -184,7 +184,7 @@
         <div class="pet-info">
           <div>
             <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade" placeholder="11" required>
+            <input type="number" id="idade" name="idade"  min="0" placeholder="11" required>
             <div class="radioOpt">
               <label for="mesOption">
                 Mês(es)
@@ -250,31 +250,31 @@
           <div class="checkbox-group">
             <label for="coleira">
               Coleira
-              <input type="checkbox" id="coleira" name="itensPet">
+              <input type="checkbox" id="coleira" name="coleira">
             </label>
             <label for="guia">
               Guia
-              <input type="checkbox" id="guia" name="itensPet">
+              <input type="checkbox" id="guia" name="guia">
             </label>
             <label for="enforcador">
               Enforcador
-              <input type="checkbox" id="enforcador" name="itensPet">
+              <input type="checkbox" id="enforcador" name="enforcador">
             </label>
             <label for="retratil">
               Retrátil
-              <input type="checkbox" id="retratil" name="itensPet">
+              <input type="checkbox" id="retratil" name="retratil">
             </label>
             <label for="peitoral">
               Peitoral
-              <input type="checkbox" id="peitoral" name="itensPet">
+              <input type="checkbox" id="peitoral" name="peitoral">
             </label>
             <label for="escovaDental">
               Escova de dentes
-              <input type="checkbox" id="escovaDental" name="itensPet">
+              <input type="checkbox" id="escovaDental" name="escovaDental">
             </label>
             <label for="pastaDental">
               Pasta de dentes
-              <input type="checkbox" id="pastaDental" name="itensPet">
+              <input type="checkbox" id="pastaDental" name="pastaDental">
             </label>
           </div>
         </div>
@@ -283,27 +283,27 @@
           <div class="checkbox-group">
             <label for="castrado">
               Castrado(a)
-              <input type="checkbox" id="castrado" name="obsPonderada">
+              <input type="checkbox" id="castrado" name="castrado">
             </label>
             <label for="alergico">
               Alérgico
-              <input type="checkbox" id="alergico" name="obsPonderada">
+              <input type="checkbox" id="alergico" name="alergico">
             </label>
             <label for="horaMarcada">
               Hora marcada
-              <input type="checkbox" id="horaMarcada" name="obsPonderada">
+              <input type="checkbox" id="horaMarcada" name="horaMarcada">
             </label>
             <label for="encaixe">
               Encaixe
-              <input type="checkbox" id="encaixe" name="obsPonderada">
+              <input type="checkbox" id="encaixe" name="encaixe">
             </label>
             <label for="pacote">
               Pacote
-              <input type="checkbox" id="pacote" name="obsPonderada">
+              <input type="checkbox" id="pacote" name="pacote">
             </label>
             <label for="taxiDog">
               Taxi-dog
-              <input type="checkbox" id="taxiDog" name="obsPonderada">
+              <input type="checkbox" id="taxiDog" name="taxiDog">
             </label>
           </div>
         </div>
