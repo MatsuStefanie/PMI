@@ -1,321 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Show</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form id="formulario">
+    <label>A:
+      <input type="number" id="ia" required>
+    </label>
+    <label>B:
+      <input type="number" id="ib" required>
+    </label>
+    <label>C:
+      <input type="number" id="ic" required>
+    </label>
+    <input type="submit" value="Calcular" id="">
+  </form>
+  <h3 id="resultado"></h3>
+</body>
+<script>
+  formulario.onsubmit = function (e) {
+    e.preventDefault();
+    var a, b, c;
+    a = ia.value;
+    b = ib.value;
+    c = ic.value;
+    var delta = b ** 2 - 4 * a * c;
+
+    if (delta < 0) {
+      resultado.textContent = "Não possui raizes";
+    } else {
+      if (delta == 0) {
+        let raiz;
+        raiz = -b / 2 * a;
+        resultado.textContent = `Possui uma raiz: ${raiz}`;
+      } else {
+        let r1, r2;
+        r1 = (-b + delta ** 0.5) / (2 * a);
+        r2 = (-b - delta ** 0.5) / (2 * a);
+        resultado.textContent = `Possui duas raizes: ${r1} e ${r2}`;
       }
+    }
+  }
+</script>
 
-      div.cabecalho {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 1%;
-        align-items: baseline;
-        align-content: space-around;
-      }
-
-      h1 {
-        color: #4a69bd;
-      }
-
-      h2 {
-        color: #6a5acd;
-        margin-top: 0;
-      }
-
-      .tutor,
-      .pet,
-      .chegada {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-
-      label {
-        color: #6a5acd;
-        font-weight: bold;
-      }
-
-      input[type="text"],
-      input[type="tel"],
-      input[type="number"],
-      textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-      }
-
-      input[type="submit"],
-      input[type="reset"] {
-        background-color: #6a5acd;
-        color: #fff;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 45%;
-        font-size: 16px;
-        margin: 2%;
-      }
-
-      input[type="submit"]:hover,
-      input[type="reset"]:hover {
-        background-color: #483d8b;
-      }
-
-      .contato {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .telefone,
-      .whatsapp {
-        width: 48%;
-      }
-
-      .checkbox-group {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 10px;
-      }
-
-      .checkbox-group label {
-        width: 50%;
-      }
-
-      .pet-info input[type="number"],
-      .pet-info input[type="text"] {
-        width: 60px;
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-
-      .pet-info input[type="text"] {
-        width: 70%;
-      }
-
-      .obsPonderadas,
-      .itensDoPet {
-        padding: 10px;
-        border: 2px solid #6a5acd;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        margin-top: 10px;
-      }
-
-      .obsPonderadas label.tituloGrupo,
-      .itensDoPet label.tituloGrupo {
-        position: relative;
-        z-index: 1;
-        top: -20px;
-        background-color: white
-      }
-
-      .pet-info {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .pet-info>div {
-        width: 22%;
-        display: flex;
-        align-items: center;
-      }
-
-      .radioOpt {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding-left: 1%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="cabecalho">
-      <div>
-        <h1>PetShop</h1>
-      </div>
-      <div>
-        <h2>Banho e Tosa</h2>
-      </div>
-    </div>
-    <form action="https://www.google.com.br/" method="get" target="_blank">
-      <div class="tutor">
-        <div>
-          <label for="nomeDono">Nome tutor:</label>
-          <input type="text" id="nomeDono" name="nomeDono" pattern="[a-zA-ZÀ-ú\s]*" placeholder="Nome completo do tutor" required>
-        </div>
-        <div class="contato">
-          <div class="telefone">
-            <label for="telefone">Telefone tutor:</label>
-            <input type="tel" id="telefone" name="telefone" pattern="\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}" placeholder="(11)99999-0000" required>
-          </div>
-          <div class="whatsapp">
-            <label for="contato">Whatsapp?</label>
-            <input type="checkbox" id="contato" name="whatsapp">
-          </div>
-        </div>
-        <div>
-          <label for="endereco">Endereço:</label>
-          <input type="text" id="endereco" name="endereco" maxlength="100" placeholder="Endereço completo do tutor" required>
-        </div>
-      </div>
-
-      <div class="pet">
-        <div>
-          <label for="petName">Nome pet:</label>
-          <input type="text" name="nomePet" id="petName" name="nomePet" placeholder="Nome do pet" required>
-        </div>
-        <div class="pet-info">
-          <div>
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade"  min="0" placeholder="11" required>
-            <div class="radioOpt">
-              <label for="mesOption">
-                Mês(es)
-                <input type="radio" id="mesOption" name="idadeUnit" value="mes" checked>
-              </label>
-              <label for="anoOption">
-                Ano(s)
-                <input type="radio" id="anoOption" name="idadeUnit" value="ano">
-              </label>
-            </div>
-          </div>
-          <div>
-            <label>Espécie:</label>
-            <div class="radioOpt">
-              <label for="dog">Canina
-                <input type="radio" id="dog" name="especie" value="canina" checked></label>
-              <label for="cat">Felina
-                <input type="radio" id="cat" name="especie" value="felina"></label>
-            </div>
-          </div>
-          <div>
-            <label for="racaInput">Raça:</label>
-            <input list="raca" type="text" id="racaInput" name="racaInput">
-
-            <datalist id="raca">
-              <option value="Cachorro Vira-lata">
-              <option value="Labrador Retriever">
-              <option value="Golden Retriever">
-              <option value="Poodle">
-              <option value="Bulldog Inglês">
-              <option value="Beagle">
-              <option value="Shih Tzu">
-              <option value="Pug">
-              <option value="Pastor Alemão">
-              <option value="Yorkshire Terrier">
-              <option value="Siamês">
-              <option value="Persa">
-              <option value="Sphynx">
-              <option value="Maine Coon">
-              <option value="Bengal">
-              <option value="Ragdoll">
-              <option value="British Shorthair">
-              <option value="Siberiano">
-              <option value="Scottish Fold">
-              <option value="Norueguês da Floresta">
-            </datalist>
-          </div>
-          <div>
-            <label>Sexo:</label>
-            <div class="radioOpt">
-              <label for="femea">Femea
-                <input type="radio" id="femea" name="sexo" value="femea" checked></label>
-              <label for="macho">Macho
-                <input type="radio" id="macho" name="sexo" value="macho"></label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="chegada">
-        <div class="itensDoPet">
-          <label class="tituloGrupo">Itens deixados com o pet:</label>
-          <div class="checkbox-group">
-            <label for="coleira">
-              Coleira
-              <input type="checkbox" id="coleira" name="coleira">
-            </label>
-            <label for="guia">
-              Guia
-              <input type="checkbox" id="guia" name="guia">
-            </label>
-            <label for="enforcador">
-              Enforcador
-              <input type="checkbox" id="enforcador" name="enforcador">
-            </label>
-            <label for="retratil">
-              Retrátil
-              <input type="checkbox" id="retratil" name="retratil">
-            </label>
-            <label for="peitoral">
-              Peitoral
-              <input type="checkbox" id="peitoral" name="peitoral">
-            </label>
-            <label for="escovaDental">
-              Escova de dentes
-              <input type="checkbox" id="escovaDental" name="escovaDental">
-            </label>
-            <label for="pastaDental">
-              Pasta de dentes
-              <input type="checkbox" id="pastaDental" name="pastaDental">
-            </label>
-          </div>
-        </div>
-        <div class="obsPonderadas">
-          <label class="tituloGrupo">Observações ponderadas:</label>
-          <div class="checkbox-group">
-            <label for="castrado">
-              Castrado(a)
-              <input type="checkbox" id="castrado" name="castrado">
-            </label>
-            <label for="alergico">
-              Alérgico
-              <input type="checkbox" id="alergico" name="alergico">
-            </label>
-            <label for="horaMarcada">
-              Hora marcada
-              <input type="checkbox" id="horaMarcada" name="horaMarcada">
-            </label>
-            <label for="encaixe">
-              Encaixe
-              <input type="checkbox" id="encaixe" name="encaixe">
-            </label>
-            <label for="pacote">
-              Pacote
-              <input type="checkbox" id="pacote" name="pacote">
-            </label>
-            <label for="taxiDog">
-              Taxi-dog
-              <input type="checkbox" id="taxiDog" name="taxiDog">
-            </label>
-          </div>
-        </div>
-        <div>
-          <label for="obs">Observações:</label>
-          <textarea id="obs" name="obs" cols="30" rows="5"></textarea>
-        </div>
-      </div>
-      <hr>
-
-      <input type="submit" value="Enviar">
-      <input type="reset" value="Limpar">
-    </form>
-  </body>
 </html>
